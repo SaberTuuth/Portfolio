@@ -405,6 +405,11 @@ svg {
   display: flex;
   flex-direction: column;
 }
+.project-details video {
+  max-width: 900px;
+  display: flex;
+  height: auto;
+}
 
 .project-title {
   text-align: center;
@@ -451,6 +456,10 @@ svg {
   gap: 10px; /* Space between icon and text */
 }
 
+.quick-des p {
+  font-size: 24px;
+}
+
 .quick-des,
 .info-card {
   background-color: rgb(53, 53, 53);
@@ -468,4 +477,37 @@ svg {
 .quick-des h2 {
   margin-bottom: 16px;
   font-size: 1.3rem;
+}
+
+.project-content h3 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 36px;
+}
+
+.project-content p {
+  margin: 60px;
+  text-indent: 30px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.video-container {
+  display: flex;
+  gap: 5rem; /* space between videos */
+  justify-content: center;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 40px;
+}
+
+.neighborcount {
+  width: 1000px;
 }
