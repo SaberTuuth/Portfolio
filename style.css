@@ -396,3 +396,76 @@ svg {
     font-size: 1rem;
     color: #83ff7f;
 }
+
+/* individual projects */
+
+.project-details {
+  align-items: center;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.game-cover {
+  align-items: center;
+  width: 550px;
+}
+
+.quick-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: stretch; /* ensures equal height */
+  padding: 10px 30px;
+}
+
+.quick-des {
+  background-color: rgb(53, 53, 53);
+}
+
+.info-card {
+  background-color: rgb(53, 53, 53); 
+  padding: 20px 30px;
+  border-radius: 10px;
+  max-width: 350px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.info-card h2 {
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.info-card > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px; /* Creates space between rows */
+  gap: 10px; /* Space between icon and text */
+}
+
+.quick-des,
+.info-card {
+  background-color: rgb(53, 53, 53);
+  flex: 1 1 300px;     /* Flex-grow, shrink, and base width */
+  max-width: 700px;    /* Limit width */
+  min-width: 300px;    /* Prevent being too small on mobile */
+  padding: 20px 30px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #fff; /* Optional: ensures text is readable */
+}
+
+.info-card h2,
+.quick-des h2 {
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
