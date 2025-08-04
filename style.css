@@ -445,6 +445,10 @@ svg {
   line-height: 1.6;
 }
 
+.info-card span {
+   font-size: 20px;
+}
+
 .info-card h2 {
   margin-bottom: 16px;
   font-size: 1.3rem;
