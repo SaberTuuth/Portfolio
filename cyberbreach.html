@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kasey Russell | Portfolio Game of Life</title>
+    <title>Kasey Russell | Portfolio Cyber Breach</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -153,6 +153,104 @@
         combat system felt responsive and balanced while remaining visually
         engaging and mechanically clear.
       </p>
+      <h3>Projectile Knife System</h3>
+      <p>
+        As part of my key contributions to the project, I developed a modular
+        projectile system to support three distinct player weapons, each with
+        unique gameplay mechanics and visual feedback. For the Regular Knife, I
+        implemented realistic physics-based movement using rigidbody components,
+        allowing the knife to arc naturally with gravity. Upon impact, I added
+        visual feedback by triggering a coroutine that temporarily changed the
+        color of the hit target, enhancing player responsiveness. The Frost
+        Knife introduced crowd control functionality by leveraging Unity’s
+        NavMeshAgent.isStopped property to freeze enemy AI on contact. I
+        reinforced this effect with a custom freezing visual, achieved by
+        overlaying a translucent, scaled duplicate of the enemy mesh to simulate
+        an ice-encased appearance. The Fire Knife brought a damage-over-time
+        mechanic into the system, where I used a coroutine with yield return new
+        WaitForSeconds to apply periodic damage ticks, simulating a burning
+        effect over several seconds. This modular approach allowed for easy
+        expansion and maintenance while supporting varied gameplay experiences
+        for each weapon type.
+      </p>
+      <div class="video-container">
+        <video
+          loop
+          autoplay
+          muted
+          playinline
+          src="videos/ice and standard knife - Made with Clipchamp.mp4"
+        ></video>
+      </div>
+      <h3>Level Obstacles</h3>
+      <p>
+        For the level design and gameplay challenges, I created a variety of
+        interactive, platform-based obstacles that tested the player’s movement,
+        timing, and spatial awareness. This included the implementation of
+        disappearing platforms that required precise jumps and quick
+        decision-making, enhancing the pacing and tension of the level. I also
+        integrated pressure plates that activated or deactivated specific
+        elements in the environment—such as unlocking doors, triggering hazards,
+        or toggling platform visibility—adding puzzle-solving elements to the
+        platforming experience. Additionally, I developed level triggers to
+        manage in-game events like enemy spawns, checkpoint activations, or
+        environmental changes, ensuring smooth transitions and responsive
+        feedback tied directly to the player's actions. These components worked
+        together to create dynamic, engaging gameplay that blended traditional
+        level design with interactive, game-driven mechanics.
+      </p>
+      <div class="video-container">
+        <video
+          loop
+          autoplay
+          muted
+          playinline
+          src="videos/disappearing platforms and triggers - Made with Clipchamp.mp4"
+        ></video>
+      </div>
+      <h3>Additional Contributions</h3>
+      <p>
+        In addition to my primary responsibilities, I actively supported my four
+        team members throughout development by assisting with debugging various
+        gameplay systems, including AI behavior, core game mechanics, and UI
+        functionality. I helped identify and resolve logic errors, optimize
+        component interactions, and ensure smoother integration across systems,
+        fostering a more stable and polished game experience. I also implemented
+        music transition triggers that responded to in-game events such as
+        entering combat zones or reaching key narrative moments. These audio
+        transitions enhanced the overall atmosphere and emotional pacing of the
+        game, contributing to a more immersive and dynamic player experience.
+      </p>
+      <h3>What I Learned</h3>
+      <p>
+        This project taught me the importance of balancing ambition with scope,
+        especially when working under time constraints in a team environment. I
+        gained hands-on experience with modular programming practices, which
+        allowed me to iterate quickly and adapt to design changes. I also
+        deepened my understanding of Unity’s physics system, NavMesh AI
+        controls, and coroutine-based timing for gameplay effects. Most
+        importantly, I learned how to collaborate effectively with a
+        multidisciplinary team, communicate technical ideas clearly, and
+        troubleshoot complex interactions between gameplay systems and visual
+        feedback.
+      </p>
+      <h3>Project and Repository</h3>
+      <div class="project-repo-container">
+        <div class="cta-buttons">
+          <a
+            href="https://github.com/dioavila/Portfolio2.git"
+            class="btn"
+            target="_blank"
+            >Github Repo</a
+          >
+          <a
+            href="https://peepkiller520.itch.io/cyberbreach"
+            class="btn"
+            target="_blank"
+            >Play Cyber Breach</a
+          >
+        </div>
+      </div>
     </div>
   </body>
   <footer class="site-footer">
