@@ -78,47 +78,55 @@ hr {
   margin-top: 10px;
 }
 
+.main-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 60px;
+}
+
 .title-wrapper {
   display: flex;
   align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .text-block {
-  margin-left: 30px;
+  flex: 1;
+  min-width: 280px;
 }
 
 .pic {
-    float: left;
-    margin-left: 100px;
-    width: 200px;
-    border-radius: 20px;
+  width: 200px;
+  height: auto;
+  border-radius: 20px;
+  flex-shrink: 0;
 }
 
 .title-text {
   font-weight: bold;
-  font-size: 65px;
+  font-size: clamp(2.5rem, 5vw, 65px);
 }
 
 .tagline {
-    font-weight:  bold;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 4px;
 }
 
 .intro-text {
-  margin-top: 10px;
-  margin-right: 100px;
-  font-size: 24px;
-  line-height: 1.5;
+  margin-top: 16px;
+  font-size: 1.1rem;
+  line-height: 1.6;
   color: #ffffff;
 }
 
 .education-section {
- display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Optional, centers vertically if container allows */
-  padding: 40px 20px;
+  padding: 50px 20px 40px;
   text-align: center;
-  
 }
 
 .section-title {
@@ -131,7 +139,8 @@ hr {
 .education-cards {
   display: flex;
   gap: 30px;
-  
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .edu-card {
@@ -161,14 +170,14 @@ hr {
 }
 
 .technical-experience {
-  padding: 40px 20px;
+  padding: 40px 20px 50px;
   text-align: center;
 }
 
 .technical-experience h2 {
   font-size: 2.5rem;
-  color: #ffffff; /* light cyan-like tone */
-  margin-bottom: 20px;
+  color: #ffffff;
+  margin-bottom: 24px;
 }
 
 .tech-tags {
@@ -191,12 +200,12 @@ hr {
 
 .tag:hover {
   background-color: #83ff7f;
-  color: #0d0d0d; /* dark background text contrast */
+  color: #0d0d0d;
 }
 
 .cta-section {
   text-align: center;
-  padding: 40px 20px;
+  padding: 40px 20px 20px;
 }
 
 .cta-heading {
@@ -210,7 +219,7 @@ hr {
   content: "";
   display: block;
   height: 3px;
-  background-color: #83ff7f; /* or any accent color */
+  background-color: #83ff7f;
   width: 60%;
   margin: 10px auto 0 auto;
   border-radius: 2px;
@@ -220,7 +229,7 @@ hr {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap; /* allows wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -530,6 +539,11 @@ svg {
 .footer-content {
   max-width: 1000px;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .footer-nav,
@@ -556,7 +570,25 @@ svg {
     display: block;
     margin: 1.5rem 0;
   }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
 }
+
+@media (max-width: 560px) {
+  .title-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text-block {
+    min-width: 100%;
+  }
+}
+
 .project-details img {
   width: 800px;
 }
