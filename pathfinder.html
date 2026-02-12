@@ -26,22 +26,22 @@
 
     <div class="project-details">
       <h1 class="project-title">Pathfinding Simulator</h1>
-      <img />
+      <video
+        loop
+        autoplay
+        muted
+        playsinline
+        src="videos/projectDemo.mp4"
+      ></video>
     </div>
     <div class="quick-info">
       <div class="quick-des">
         <h2>About Path Finder Simulation</h2>
         <p>
-          Pathfinder Simulator is a 2D real-time visualization tool that
-          demonstrates how different pathfinding algorithms operate, allowing
-          users to observe AI decision-making as it happens. The project is
-          designed to help developers and learners understand how pathfinding is
-          used in video games by visually breaking down each step of the search
-          process. In addition, it serves as a practical debugging tool for game
-          developers to test map layouts and identify high-traffic (hot) and
-          low-traffic (cold) zones without the need to launch a full game
-          editor. The simulator supports multiple tile shapes, including square,
-          hexagonal, and triangular grids.
+          I developed an interactive pathfinding and procedural maze generation
+          tool in Java that visualizes graph traversal algorithms across
+          multiple grid topologies (square, hexagonal, and triangular) while
+          supporting real-time user editing.
         </p>
       </div>
       <div class="info-card">
@@ -140,35 +140,191 @@
     <div class="project-content">
       <h3 class="introduction">Introduction</h3>
       <p>
-        This project is a real-time pathfinding visualization tool built to
-        strengthen my understanding of algorithms, data structures, and
-        grid-based navigation systems commonly used in software and game
-        development. The application supports square, hexagonal, and triangular
-        tile maps, with all nodes and neighbor relationships initialized
-        dynamically based on grid type. Users can customize the grid size, tile
-        colors, background, and pathfinding speed, allowing algorithms to be
-        observed and compared in real time. I implemented Breadth-First Search
-        (BFS) and Depth-First Search (DFS) with step-by-step visualization,
-        along with tools to inspect node connections and neighbor relationships.
-        The project was built entirely in Java and JavaFX to intentionally
-        deepen my Java skills while applying them to a practical, visual
-        problem. This project demonstrates my ability to design clean rendering
-        systems, manage application state, and build interactive tools that make
-        complex algorithms easier to understand. It also serves as a foundation
-        for adding more advanced algorithms such as A*, Dijkstra’s, and weighted
-        pathfinding.
+        Pathfinding algorithms are widely used in games and software navigation
+        systems, but their behavior is difficult to understand from pseudocode
+        alone. While learning graph traversal, I found that most examples
+        demonstrated only the final path and did not show how the algorithm
+        actually explored the search space or why different approaches produced
+        dramatically different performance.
       </p>
-      <h3></h3>
-      <p></p>
+      <p>
+        I created this tool to visualize the decision-making process of search
+        algorithms in real time. By allowing the environment to be edited while
+        the search runs and supporting multiple grid types, the application
+        makes it possible to observe how node expansion, branching behavior, and
+        heuristics affect the pathfinding process. The project was intended both
+        as a learning exercise and as a debugging tool to better understand
+        algorithm efficiency and tradeoffs.
+      </p>
       <div class="video-container">
-        <video loop autoplay muted playinline src="videos/pathdemo.mp4"></video>
+        <video loop autoplay muted playinline src=""></video>
       </div>
-      <h3></h3>
-      <p></p>
-      <h3></h3>
-      <p></p>
-      <h3></h3>
-      <p></p>
+      <h3>Key Technical Challenges</h3>
+      <h2>1. Mapping Mouse Input to Grid Coordinates</h2>
+      <p>
+        The application supports square, hexagonal, and triangular grids, each
+        with different geometric layouts and neighbor relationships. Converting
+        continuous mouse coordinates into the correct tile required implementing
+        separate coordinate calculations and hit detection logic for each grid
+        type while ensuring accuracy during drag input.
+      </p>
+      <div class="tri-video-container">
+        <div>
+          <video
+            loop
+            autoplay
+            muted
+            playinline
+            src="videos/Squaremap.mp4"
+          ></video>
+        </div>
+        <div>
+          <video
+            loop
+            autoplay
+            muted
+            playinline
+            src="videos/Hex map.mp4"
+          ></video>
+        </div>
+        <div>
+          <video loop autoplay muted playinline src="videos/trimap.mp4"></video>
+        </div>
+      </div>
+      <h2>2. Real-Time Editing and Drag Interaction</h2>
+      <p>
+        Allowing users to paint walls and weighted terrain by dragging the mouse
+        introduced challenges with event handling and state management. I
+        implemented a press–drag–release input system and prevented duplicate
+        tile updates while maintaining responsiveness during rapid cursor
+        movement.
+      </p>
+      <h2>3. Preventing UI Freezing During Search</h2>
+      <p>
+        Running search algorithms in a loop initially caused the JavaFX UI to
+        freeze. To solve this, I converted the algorithms into step-based
+        updates driven by a timed update loop, allowing the search to run
+        incrementally while the interface remained interactive and observable.
+      </p>
+      <h2>4. Maintaining Correct Search State</h2>
+
+      <p>
+        The grid can be edited while the program is running, which required
+        carefully resetting visited nodes, frontier structures, and
+        reconstructed paths whenever the environment changed. This ensured
+        algorithms always operated on a valid and consistent state.
+      </p>
+      <h2>5. Visualizing Algorithm Behavior</h2>
+      <p>
+        Simply finding a path was not sufficient; the goal was to observe
+        algorithm decisions. I implemented node expansion visualization,
+        frontier tracking, and path reconstruction so users could see how each
+        algorithm explored the search space and why different approaches
+        produced different results.
+      </p>
+      <div class="video-container">
+        <video
+          loop
+          muted
+          autoplay
+          playinline
+          src="videos/searchvisuals.mp4"
+        ></video>
+      </div>
+      <h2>6. Procedural Maze Generation</h2>
+      <p>
+        I implemented a recursive backtracker maze generator using a depth-first
+        search stack. The generator carves passages between cells by removing
+        walls and runs step-by-step so the construction process can be observed.
+        The generated maze can then be solved using A*, demonstrating the
+        relationship between procedural generation and pathfinding.
+      </p>
+      <h3>Algorithm Behavior & Tradeoffs</h3>
+      <p>
+        The application implements multiple search strategies so their behavior
+        can be compared under the same conditions.
+      </p>
+      <h2>Breadth-First Search (BFS)</h2>
+      <p>
+        BFS explores the grid uniformly outward from the start position and
+        guarantees the shortest path in unweighted environments. However, it
+        expands a large number of nodes, especially in open areas, making it
+        inefficient for large maps.
+      </p>
+      <h2>Depth-First Search (DFS)</h2>
+      <p>
+        DFS prioritizes depth over coverage and uses very little memory, but it
+        often explores long incorrect paths before backtracking. It does not
+        guarantee the shortest path and performs poorly in open spaces. **Greedy
+        Best-First Search** Greedy search prioritizes nodes closest to the goal
+        using a heuristic distance estimate. It often reaches the goal quickly
+        but can produce suboptimal paths because it ignores the actual travel
+        cost and may get trapped exploring around obstacles.
+      </p>
+      <h2>Greedy Best-First Search</h2>
+      <p>
+        Greedy Best-First Search selects the next node to explore based solely
+        on the heuristic estimate of distance to the goal. By always
+        prioritizing the tile that appears closest to the target, it typically
+        reaches the goal faster than uninformed searches. However, because it
+        ignores the actual movement cost and previously traveled distance, it
+        does not guarantee an optimal path. In environments with obstacles or
+        weighted terrain, the algorithm often commits to poor routes and spends
+        additional time correcting its decisions while navigating around
+        barriers.
+      </p>
+      <h2>Uniform Cost Search (Dijkstra’s Algorithm)</h2>
+      <p>
+        Uniform cost search expands nodes based on accumulated movement cost and
+        correctly handles weighted terrain. It always finds the lowest-cost path
+        but explores many unnecessary nodes because it has no directional
+        guidance toward the goal.
+      </p>
+      <h2>A* Search</h2>
+      <p>
+        A* combines the actual travel cost with a heuristic estimate to the
+        goal. This allows it to prioritize promising directions while still
+        guaranteeing the optimal path. In testing, A* consistently explored far
+        fewer nodes and solved complex mazes significantly faster than the other
+        algorithms.
+      </p>
+      <p>
+        Visualizing the node expansion made the differences clear: uninformed
+        searches spread across the map, greedy search rushes toward the goal but
+        makes mistakes, and A* balances exploration and direction to minimize
+        total search cost.
+      </p>
+      <h3>What I Learned</h3>
+      <p>
+        This project taught me that algorithm performance is not only determined
+        by execution speed but by how efficiently the search space is explored.
+        Visualization revealed that heuristics have a greater impact on
+        performance than raw processing speed, especially as grid size
+        increases.
+      </p>
+      <p>
+        I also learned the importance of separating simulation logic from
+        rendering. Running the algorithm in a tight loop caused the UI to
+        freeze, which required redesigning the search to operate as incremental
+        steps driven by a timed update loop.
+      </p>
+      <p>
+        Finally, building an interactive tool highlighted how input handling and
+        state management become significantly more complex when a system must
+        remain correct while the environment changes in real time.
+      </p>
+      <h3>Project and Repository</h3>
+      <div class="project-repo-container">
+        <div class="cta-buttons">
+          <a
+            href="https://github.com/SaberTuuth/Pathfinder.git"
+            class="btn"
+            target="_blank"
+            >Github Repo</a
+          >
+          <a href="download" class="btn">Download Pathfinding Simulation</a>
+        </div>
+      </div>
     </div>
   </body>
 
