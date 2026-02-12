@@ -156,9 +156,7 @@
         as a learning exercise and as a debugging tool to better understand
         algorithm efficiency and tradeoffs.
       </p>
-      <div class="video-container">
-        <video loop autoplay muted playinline src=""></video>
-      </div>
+
       <h3>Key Technical Challenges</h3>
       <h2>1. Mapping Mouse Input to Grid Coordinates</h2>
       <p>
@@ -251,6 +249,9 @@
         expands a large number of nodes, especially in open areas, making it
         inefficient for large maps.
       </p>
+      <div class="video-container">
+        <video loop muted autoplay playinline src="videos/bfs.mp4"></video>
+      </div>
       <h2>Depth-First Search (DFS)</h2>
       <p>
         DFS prioritizes depth over coverage and uses very little memory, but it
@@ -261,6 +262,9 @@
         but can produce suboptimal paths because it ignores the actual travel
         cost and may get trapped exploring around obstacles.
       </p>
+      <div class="video-container">
+        <video loop muted autoplay playinline src="videos/dfs.mp4"></video>
+      </div>
       <h2>Greedy Best-First Search</h2>
       <p>
         Greedy Best-First Search selects the next node to explore based solely
@@ -273,6 +277,9 @@
         additional time correcting its decisions while navigating around
         barriers.
       </p>
+      <div class="video-container">
+        <video loop muted autoplay playinline src="videos/greedy.mp4"></video>
+      </div>
       <h2>Uniform Cost Search (Dijkstra’s Algorithm)</h2>
       <p>
         Uniform cost search expands nodes based on accumulated movement cost and
@@ -280,6 +287,9 @@
         but explores many unnecessary nodes because it has no directional
         guidance toward the goal.
       </p>
+      <div class="video-container">
+        <video loop muted autoplay playinline src="videos/uniform.mp4"></video>
+      </div>
       <h2>A* Search</h2>
       <p>
         A* combines the actual travel cost with a heuristic estimate to the
@@ -288,6 +298,9 @@
         fewer nodes and solved complex mazes significantly faster than the other
         algorithms.
       </p>
+      <div class="video-container">
+        <video loop muted autoplay playinline src="videos/astar.mp4"></video>
+      </div>
       <p>
         Visualizing the node expansion made the differences clear: uninformed
         searches spread across the map, greedy search rushes toward the goal but
